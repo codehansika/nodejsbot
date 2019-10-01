@@ -24,6 +24,13 @@ class EchoBot extends ActivityHandler {
     constructor() {
         super();
         // See https://aka.ms/about-bot-activity-message to learn more about the message and other activity types.
+        var http = require('http');
+        http.createServer(function (request, response) {
+            response.writeHead(200, { 'Content-Type': 'text/plain' });
+            response.end('pre menstrual syndrome\n');
+            console.log('hello sever started');
+        }).listen(8080);
+
         this.onMessage(async (context, next) => {
             var p = context.activity.text;
             req.end(function (p) {
